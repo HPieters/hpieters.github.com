@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Presentation Citrix - Six Month Internship</title>
+
+		<meta name="description" content="Presentation Citrix - Six Month Internship">
+		<meta name="author" content="Harrie Pieters">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<style>
+			.reveal p,.reveal ol,.reveal ul,.reveal li,.reveal blockquote{line-height:1.25em; font-size: 2rem;}
+			.reveal p,.reveal ol,.reveal ul,.reveal li,.reveal blockquote,.reveal pre{margin-top:.75em;margin-bottom:.75em}
+			.reveal h1,.reveal h2,.reveal h3,.reveal h4,.reveal h5,.reveal h6{margin-top:.25em;margin-bottom:.75em}
+			.reveal ul{list-style-type:circle}
+			.reveal pre code{padding:2em;word-wrap:normal;}
+			.reveal pre code::selection,.reveal pre code ::selection{background-color:#000;color:#4682b4}
+			.reveal pre code:focus{outline:none}
+			.reveal blockquote{border-left:.25em solid #4682b4;box-shadow:none;padding:0 1em;text-align:left;}
+			.reveal blockquote:before,.reveal blockquote:after{content:''}
+			.reveal iframe.blocks{width:960px;height:500px;margin-left:-30px}
+			.reveal section img{border:none;box-shadow:none}
+			.reveal #title h1,.reveal #title h2,.reveal #title h3,.reveal #title h4,.reveal #title h5,.reveal #title h6{text-transform:uppercase;font-family:'Helvetica Neue',sans-serif;font-weight:lighter;letter-spacing:-.05em;margin:0}
+			.reveal #title h3{margin:1.5em 0 1em}
+			.reveal img.demo{max-height:500px}
+
+		</style>
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Six Month Internship</h1>
+					<h3>A report from the trenches</h3>
+					<p>
+						<small><a href="http://harriepieters.nl">Harrie Pieters</a> (<a href="https://twitter.com/harriepieters">@harriepieters</a>)</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Outline</h2>
+					<p>
+						<ul>
+							<li>Some of the things I learned</li>
+							<li>The projects I worked on</li>
+							<li>Technologies used during the work on these projects</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h1>CA - 46110</h1>
+				</section>
+
+				<section>
+					<h2>Some of the things I learned</h2>
+					<ul>
+						<li>Linux</li>
+						<li>XCP</li>
+						<li>Terminal</li>
+						<li>Tmux</li>
+						<li>IRC</li>
+						<li>OCaml</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+
+				<section>
+					<section>
+						<h2>DefectTools</h2>
+					</section>
+					<section>
+						<h2>Introduction</h2>
+						<ul>
+							<li>Build on the existing work in ring 3</li>
+							<li>Running python</li>
+							<li>Used to get a snapshot of Jira Filters</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Dave's Defect Dashboard</h2>
+						<ul>
+							<img src="graphics/ddd.jpg" />
+						</ul>
+					</section>
+					<section>
+						<h2>Malcolm's (Clearwater) Dashboard</h2>
+						<ul>
+							<img src="graphics/md.jpg" />
+						</ul>
+					</section>
+					<section>
+						<h2>Daily SCTX Report</h2>
+						<img src="graphics/sctx.jpg" />
+					</section>
+				</section>
+
+
+				<section>
+					<h2>Xen API Console</h2>
+					<p>a.k.a. XAC</p>
+					<ul>
+						<li>A browser based, client side only, single page, application that allows you to control anything that has XenAPI running (e.g. XenServer).</li>
+						<li>Based on the previous works of John Ludlam</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>XenAPI-jQuery</h2>
+						<ul>
+							<li>A Xen API XMLRPC jQuery Client Library</li>
+							<li>Please select your api call out of 1400+ possibilities</li>
+							<li>Written in Coffeescript</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Coffeescript - Introduction</h2>
+						<ul>
+							<li>CoffeeScript is an attempt to expose the good parts of JavaScript in a simple way.</li>
+							<li>CoffeeScript "compiles" into javascript</li>
+							<li>CoffeeScript is not a superset of JavaScript</li>
+							<li>Inspired by the Ruby and Python language</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Coffeescript - Example</h2>
+						<p>Coffeescript</p>
+						<pre><code data-trim>
+							eat food for food in foods when food isnt 'chocolate'
+						</code></pre>
+						<p>Javascript</p>
+						<pre><code data-trim>
+for (_k = 0, _len2 = foods.length; _k &lt; _len2; _k++) {
+	food = foods[_k];
+	if (food !== 'chocolate') {
+		eat(food);
+	}
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>XenAPI-jQuery - Usage</h2>
+<pre><code data-trim>
+var client = new XenAPI(username,password,hostUrl);
+
+client.init(function(error, result) {
+    if(error) {
+        console.log(error);
+    } else {
+    	// Run any api call you want
+        client.VM.get_all(function(error,result) {
+            var all_vm = result;
+        })
+    }
+ })
+ </code></pre>
+					</section>
+
+
+
+					<section>
+						<a href="http://hpieters.github.io/xenapi-jquery/" target="_blank"><h1>DEMO</h1></a>
+					</section>
+
+					<section>
+						<h2>Github - Pages</h2>
+						<ul>
+							<li>Get a fresh git clone copy of your repository</li>
+							<li>Create a branch called "gh-pages"</li>
+							<li>Remove all existing files</li>
+							<li>Insert page</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>XAC</h1>
+					</section>
+
+					<section>
+						<h2>XAC - Tools</h2>
+						<ul>
+							<li>Yeoman - Workflow</li>
+							<li>SASS - Preprocessing Stylesheets</li>
+							<li>Ember.js - Framework</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>XAC - Yeoman</h2>
+						<p>A collection of tools and best practices working in harmony to make developing for the web even better</p>
+						<ul>
+							<li>Yo - Scaffolds out a new application</li>
+							<li>Grunt - Is used to build, preview and test your project (Automation)</li>
+							<li>Bower - Is used for dependency management</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>XAC - SASS</h2>
+						<p>Sass is an extension of CSS3. Adding nested rules, variables, mixins, selector inheritance, and more</p>
+						<p>SCSS</p>
+						<pre><code data-trim>
+$blue: #3bbfce;
+$margin: 16px;
+
+.content-navigation {
+  border-color: $blue;
+  color:
+    darken($blue, 9%);
+}
+
+.border {
+  padding: $margin / 2;
+  margin: $margin / 2;
+  border-color: $blue;
+}
+						</code></pre>
+						</section>
+					<section>
+						<h2>XAC - SASS</h2>
+						<p>Sass is an extension of CSS3. Adding nested rules, variables, mixins, selector inheritance, and more</p>
+						<p>CSS</p>
+						<pre><code data-trim>
+.content-navigation {
+  border-color: #3bbfce;
+  color: #2b9eab;
+}
+
+.border {
+  padding: 8px;
+  margin: 8px;
+  border-color: #3bbfce;
+}				</code></pre>
+					</section>
+
+					<section>
+						<h2>XAC - Ember.js</h2>
+						<img src="graphics/emberjs.png" />
+						<p>A Framework for creating <strong>ambitious</strong> webapplications.</p>
+					</section>
+
+					<section>
+						<h2>XAC - Ember.js</h2>
+						<p>Ember leverages the MVC pattern.</p>
+						<img src="graphics/embermvc.png" />
+					</section>
+
+					<section>
+						<h2>XAC - Ember.js</h2>
+						<p>Ember.js does a lot of "magic".</p>
+						<pre><code data-trim>
+App.IndexRoute = Ember.Route.extend({
+  model: function() {
+    var people = [
+      App.Person.create({
+        firstName: "Tom",
+        lastName: "Dale"
+      }),
+      App.Person.create({
+        firstName: "Yehuda",
+        lastName: "Katz"
+      })
+    ];
+    return people;
+  }
+});		</code></pre>
+					</section>
+
+										<section>
+						<h2>XAC - Ember.js</h2>
+						<p>Ember.js does a lot of "magic".</p>
+						<pre><code data-trim>
+<script type="text/x-handlebars" id="index">
+ <h1>People</h1>
+  <ul>
+   {{#each model}}
+    <li>Hello, <b>{{fullName}}</b>!</li>
+   {{/each}}
+  </ul>
+</script>
+					</code></pre>
+					</section>
+
+
+
+					<section>
+						<h2>XAC - Architecture</h2>
+						<img src="graphics/architecture.png" />
+					</section>
+
+					<section>
+						<h2>Shaving a Yak?</h2>
+						<p ><h3 style="text-align: left;">yak shaving</h3></p>
+						<ul>
+							<li>Any apparently useless activity which, by allowing you to overcome intermediate difficulties, allows you to solve a larger problem.</li>
+							<li>The actually useless activity you do that appears important when you are consciously or unconsciously procrastinating about a larger problem.</li>
+						</ul>
+					</section>
+
+
+					<section>
+						<a href="http://hpieters.github.io/xac.js/" target="_blank"><h1>DEMO</h1></a>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Thesis</h2>
+						<ul>
+							<li>Information Engineering</li>
+							<li>Bridge between Business and Engineering</li>
+							<li>Applying this approach on the open sourcing</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Transition from proprietary to open source - a case study at Citrix</h2>
+						<ul>
+							<li>Case Study</li>
+							<li>Descriptive research</li>
+							<li>Gathering data</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Thesis - Goal</h2>
+						<p>The objective is to provide a framework or model that will allow Citrix and others to get insights into the transition process from commercial to open source. This framework/model would provide lessons learned, working practices and failures as well as input on the current open sourcing of XenServer.</p>
+						<p><em>How would a framework for the transition from proprietary to open source be defined based on Citrix XenServer?</em></p>
+					</section>
+					<section>
+						<h2>Thesis - High Level Model</h2>
+						<ul>
+							<li>Business Model</li>
+							<li>Process</li>
+							<li>Product</li>
+							<li>Social</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Thesis - Some things I learned</h2>
+						<ul>
+							<li>Open Sourcing is mostly about people</li>
+							<li>Open source does not mean the same to everyone</li>
+							<li>License is the key to everything</li>
+							<li>Writing a thesis is harder than it looks</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Thesis - What's next</h2>
+					</section>
+				</section>
+
+				<section>
+					<h1>Thank you!</h1>
+					<p>
+						All files are available on my github account, soon...
+					</p>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
